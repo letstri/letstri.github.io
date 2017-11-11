@@ -1,1 +1,293 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Description">
+  <meta name="keywords" content="tags">
+  <meta name="author" content="author">
+
+  <!-- Chrome, Firefox, Opera -->
+  <meta name="theme-color" content="#3F51B5">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#3F51B5">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3F51B5">
+
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/materialize-custom.min.css">
+  <link rel="stylesheet" href="css/nprogress.min.css">
+  <link rel="stylesheet" href="css/prism.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Site name</title>
+</head>
+<body>
+
+<nav class="white">
+  <div class="nav-wrapper container">
+    <a href="#!" class="brand-logo black-text">jquery.timezz.js</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="sass.html" class="waves-effect">Sass</a></li>
+      <li><a href="https://github.com/BrooonS/TimezZ" class="btn btn-flat waves-effect white black-text"><img src="img/github-logo.svg" alt="Github" class="nav-image"> Github</a></li>
+      <li><a href="https://github.com/BrooonS/TimezZ/releases" data-tooltip="Version 2.0.1" data-position="bottom" data-delay="50" class="btn btn-flat light-green waves-effect white-text tooltipped"><i class="material-icons left white-text">arrow_downward</i> Download</a></li>
+    </ul>
+    <ul class="right">
+      <li><a class="dropdown-button black-text" href="#!" data-activates="dropdown1"><i class="material-icons">language</i></a></li>
+
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!">EN</a></li>
+        <li><a href="#!">RU</a></li>
+      </ul>
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="https://github.com/BrooonS/TimezZ"><img src="img/github-logo.svg" alt="Github" class="nav-image"></a></li>
+      <li><a href="https://github.com/BrooonS/TimezZ/releases" data-tooltip="Version 2.0.1" data-position="bottom" data-delay="50" class="btn btn-flat light-green waves-effect white-text tooltipped"><i class="material-icons left white-text">arrow_downward</i> Download</a></li>
+    </ul>
+  </div>
+</nav> <!-- /nav -->
+
+<div class="wrapper" style="opacity: 0">
+
+  <header class="header">
+    <div class="container">
+      <div class="row middle">
+
+        <div class="col-lg-5 header-left">
+          <h1 class="header-title">TimezZ</h1>
+          <p class="header-description">Fast jQuery timer plugin<br>for countdown and count forward.</p>
+          <code class="header-install">npm install <span class="light-green-text">timezz</span></code>
+          <code class="header-install">bower install <span class="light-green-text">timezz</span></code>
+          <div class="header-github">
+            <a class="github-button" href="https://github.com/BrooonS/timezz" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star BrooonS/timezz on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/BrooonS/timezz/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch BrooonS/timezz on GitHub">Watch</a>
+          </div>
+        </div>
+
+        <div class="col-lg-7 header-right">
+          <p class="timer-description">To the world end left</p>
+          <div id="timer" class="timer"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </header> <!-- /header -->
+
+  <main class="main container">
+
+    <div class="row">
+
+      <div class="col-md-6">
+
+        <h2 class="main-title"><i class="material-icons">description</i> Description</h2>
+        <p>With this plugin you can easily put a timer on your site, it works both ways. Using the config you can change the tags as letters and numbers, you can also change the text output next to the numbers.</p>
+
+        <h3 class="main-title main-title-mini"><i class="material-icons">compare_arrows</i> Two directions</h3>
+        <p>You specified a date which is already about to end? TimezZ will continue to report how much time passed from the specified date.</p>
+
+        <h3 class="main-title main-title-mini"><i class="material-icons">info_outline</i> Two versions</h3>
+        <p>You can use two version, one version is the version for modern browsers with the standards of the ES2017 and the version for old browsers with ES2015 standards.</p>
+      </div>
+
+      <div class="col-md-6">
+        <h2 class="main-title"><i class="material-icons">build</i> Usage</h2>
+        <blockquote>If you need support for older browsers such as IE9, use <code>jquery.timezz-es2015.js</code></blockquote>
+        <ul>
+          <li>
+            <h3 class="main-title main-title-mini">Connect</h3>
+            <pre class="language-markup"><code>&lt;script src="/js/jquery.timezz.min.js"&gt;&lt;/script&gt;</code></pre>
+          </li>
+          <li>
+            <h3 class="main-title main-title-mini">HTML</h3>
+            <pre class="language-markup"><code>&lt;div id="timer"&gt;&lt;/div&gt;</code></pre>
+          </li>
+          <li>
+            <h3 class="main-title main-title-mini">Initialization</h3>
+            <pre class="language-javascript"><code>$('#timer').timezz();</code></pre>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <h2 class="main-title"><i class="material-icons">list</i> Config</h2>
+        <pre class="language-javascript"><code>$('#timer').timezz({
+'date' : 'January 1, 2040 00:00:00',
+'days' : 'd',
+'hours' : 'h',
+'minutes' : 'm',
+'seconds' : 's',
+'tagNumber' : 'span',
+'tagLetter' : 'i',
+'stop' : false
+});</code></pre>
+        <table class="highlight bordered responsive-table">
+          <thead>
+            <tr>
+              <td>Setting</td>
+              <td>Default</td>
+              <td>Description</td>
+              <td>Type</td>
+            </tr>
+          </thead>
+          <tr>
+            <td>date</td>
+            <td><code>January 1, 2040 00:00:00</code></td>
+            <td>Indicate the date</td>
+            <td><code>string</code></td>
+          </tr>
+          <tr>
+            <td>days</td>
+            <td><code>d</code></td>
+            <td>How to name days</td>
+            <td><code>string</code></td>
+          </tr>
+          <tr>
+            <td>hours</td>
+            <td><code>h</code></td>
+            <td>How to name hours</td>
+            <td><code>string</code></td>
+          </tr>
+          <tr>
+            <td>minutes</td>
+            <td><code>m</code></td>
+            <td>How to name minutes</td>
+            <td><code>string</code></td>
+          </tr>
+          <tr>
+            <td>seconds</td>
+            <td><code>s</code></td>
+            <td>How to name seconds</td>
+            <td><code>string</code></td>
+          </tr>
+          <tr>
+            <td>tagNumber</td>
+            <td><code>span</code></td>
+            <td>Tag in which will be wrapped numbers</td>
+            <td><code>string</code></td>
+          </tr>
+          <tr>
+            <td>tagLetter</td>
+            <td><code>i</code></td>
+            <td>Tag in which will be wrapped letters</td>
+            <td><code>string</code></td>
+          </tr>
+          <tr>
+            <td>stop</td>
+            <td><code>false</code></td>
+            <td>Is this timer a working?</td>
+            <td><code>boolean</code></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <h2 class="main-title"><i class="material-icons">settings</i> Example customize</h2>
+        <pre class="language-css"><code>#timer {
+  font-size: 70px;
+}
+#timer span {
+  color: #555;
+}
+#timer i {
+  color: #bbb;
+  font-size: 40px;
+}</code></pre>
+
+        <h2 class="main-title"><i class="material-icons">timer</i> Try your date</h2>
+        <p>Your can enter your any date for demo.</p>
+        <input type="date" id="demo-timer-input" placeholder="Month / Day / Year" value="January 1, 2040">
+        <div class="demo-timer"><div id="demo-timer"></div></div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row between middle">
+        <div class="footer-left">
+          <h5 class="footer-title">TimezZ</h5>
+        </div>
+        <div class="footer-right">
+          <a href="https://github.com/BrooonS/TimezZ">Github</a>
+          <a href="https://github.com/BrooonS/TimezZ/blob/master/LICENSE">Licence</a>
+          <a href="https://github.com/BrooonS">Author</a>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- /footer -->
+
+</div> <!-- /wrapper -->
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script>
+  $(".button-collapse").sideNav();
+</script>
+<script src="js/nprogress.js"></script>
+<script>
+  NProgress.configure({ showSpinner: false });
+</script>
+<script src="js/prism.js"></script>
+<script src="js/scripts.min.js"></script>
+<script src="js/jquery.timezz-es2015.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+$('#timer').timezz({
+  'date' : 'January 1, 2040 00:00:00',
+  'days' : 'day',
+  'hours' : 'hrs',
+  'minutes' : 'min',
+  'seconds' : 'sec',
+  'tagNumber' : 'b',
+  'tagLetter' : 'span'
+ });
+</script>
+<script>
+  // demo timer
+  $('#demo-timer').timezz({
+    'date' : 'Jan 01, 2020 00:00:00',
+    'tagNumber' : 'b',
+    'tagLetter' : 'span'
+  });
+
+  // for «Try your date»
+  $('#demo-timer-input').change(demoTimer)
+  $('#demo-timer-input').keyup(demoTimer)
+
+  function demoTimer() {
+    var demoDate = $(this).val();
+    var demoId = 'demo-timer';
+    var demoParent = $('.demo-timer');
+
+    $('#' + demoId).remove()
+
+    if (isNaN(Date.parse(demoDate))) {
+      demoParent.html('Date is not correct')
+    } else {
+      demoParent.html('<div id="' + demoId + '"></div>')
+
+      $('#' + demoId).timezz({
+        'date' : demoDate,
+        'tagNumber' : 'b',
+        'tagLetter' : 'span'
+      });
+    }
+
+  }
+</script>
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</body>
+</html>
