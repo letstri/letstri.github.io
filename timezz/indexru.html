@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Fast jQuery timer plugin for countdown and count forward.">
-  <meta name="keywords" content="timer, timezz, jquery, plugin, jquery-plugin, countdown, count-forward, time">
+  <meta name="description" content="Fast timer plugin for countdown and count forward.">
+  <meta name="keywords" content="timer, timezz, plugin, countdown, count-forward, time">
   <meta name="author" content="BrooonS">
 
   <!-- Chrome, Firefox, Opera -->
@@ -22,17 +22,17 @@
   <link rel="stylesheet" href="css/style.min.css">
 
   <link rel="icon" href="img/favicon.png">
-  <title>TimezZ - Быстрый jQuery плагин таймера обратного отсчета и отсчет вперед</title>
+  <title>TimezZ - Быстрый плагин таймера обратного отсчета и отсчет вперед</title>
 </head>
 <body>
 
 <nav class="white">
   <div class="nav-wrapper container">
-    <a href="/" class="brand-logo black-text">jquery.timezz.js</a>
+    <a href="/" class="brand-logo black-text">TimezZ.js</a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="https://github.com/BrooonS/TimezZ" class="btn btn-flat waves-effect white black-text"><img src="img/github-logo.svg" alt="Github" class="nav-image"> Github</a></li>
-      <li><a href="https://github.com/BrooonS/TimezZ/releases" data-tooltip="Version 2.0.1" data-position="bottom" data-delay="50" class="btn btn-flat light-green waves-effect white-text tooltipped"><i class="material-icons left white-text">arrow_downward</i> Скачать</a></li>
+      <li><a href="https://github.com/BrooonS/TimezZ/releases" data-tooltip="Version 3.0.0" data-position="bottom" data-delay="50" class="btn btn-flat light-green waves-effect white-text tooltipped"><i class="material-icons left white-text">arrow_downward</i> Скачать</a></li>
       <li><a href="https://github.com/BrooonS/TimezZ/blob/master/LICENSE">Лицензия</a></li>
       <li><a href="https://github.com/BrooonS">Автор</a></li>
     </ul>
@@ -46,7 +46,7 @@
     </ul>
     <ul class="right hide-on-med-and-down">
       <li><a href="https://github.com/BrooonS/TimezZ"><img src="img/github-logo.svg" alt="Github" class="nav-image"></a></li>
-      <li><a href="https://github.com/BrooonS/TimezZ/releases" data-tooltip="Version 2.0.1" data-position="bottom" data-delay="50" class="btn btn-flat light-green waves-effect white-text tooltipped"><i class="material-icons left white-text">arrow_downward</i> Скачать</a></li>
+      <li><a href="https://github.com/BrooonS/TimezZ/releases" data-tooltip="Version 3.0.0" data-position="bottom" data-delay="50" class="btn btn-flat light-green waves-effect white-text tooltipped"><i class="material-icons left white-text">arrow_downward</i> Скачать</a></li>
     </ul>
   </div>
 </nav> <!-- /nav -->
@@ -59,7 +59,7 @@
 
         <div class="col-lg-5 header-left">
           <h1 class="header-title">TimezZ</h1>
-          <p class="header-description">Быстрый jQuery плагин таймера<br>обратного отсчета и отсчет вперед.</p>
+          <p class="header-description">Быстрый плагин таймера<br>обратного отсчета и отсчет вперед.</p>
           <code class="header-install">npm install <span class="light-green-text">timezz</span></code>
           <code class="header-install">bower install <span class="light-green-text">timezz</span></code>
           <div class="header-github">
@@ -70,7 +70,7 @@
 
         <div class="col-lg-7 header-right">
           <p class="timer-description">До конца мира осталось</p>
-          <div id="timer" class="timer"></div>
+          <div class="timer j-timer"></div>
         </div>
 
       </div>
@@ -96,19 +96,19 @@
 
       <div class="col-md-6">
         <h2 class="main-title"><i class="material-icons">build</i> Использование</h2>
-        <blockquote>Если вам нужна поддержка более старых браузеров, таких как IE9, используйте <code>jquery.timezz-es2015.js</code></blockquote>
+        <blockquote>Если вам нужна поддержка более старых браузеров, таких как IE9, используйте <code>TimezZ-es6.js</code></blockquote>
         <ul>
           <li>
             <h3 class="main-title main-title-mini">Подключение</h3>
-            <pre class="language-markup"><code>&lt;script src="/js/jquery.timezz.min.js"&gt;&lt;/script&gt;</code></pre>
+            <pre class="language-markup"><code>&lt;script src="/js/TimezZ.min.js"&gt;&lt;/script&gt;</code></pre>
           </li>
           <li>
             <h3 class="main-title main-title-mini">HTML</h3>
-            <pre class="language-markup"><code>&lt;div id="timer"&gt;&lt;/div&gt;</code></pre>
+            <pre class="language-markup"><code>&lt;div class="j-timer"&gt;&lt;/div&gt;</code></pre>
           </li>
           <li>
             <h3 class="main-title main-title-mini">Инициализация</h3>
-            <pre class="language-javascript"><code>$('#timer').timezz();</code></pre>
+            <pre class="language-javascript"><code>new TimezZ('.j-timer');</code></pre>
           </li>
         </ul>
       </div>
@@ -121,15 +121,15 @@
 
       <div class="col-md-6">
         <h2 class="main-title"><i class="material-icons">list</i> Конфигурация</h2>
-        <pre class="language-javascript"><code>$('#timer').timezz({
-'date' : 'January 1, 2040 00:00:00',
-'days' : 'd',
-'hours' : 'h',
-'minutes' : 'm',
-'seconds' : 's',
-'tagNumber' : 'span',
-'tagLetter' : 'i',
-'stop' : false
+        <pre class="language-javascript"><code>new TimezZ('.j-timer', {
+date: 'January 1, 2040 00:00:00',
+days: 'd',
+hours: 'h',
+minutes: 'm',
+seconds: 's',
+tagNumber: 'span',
+tagLetter: 'i',
+stop: false,
 });</code></pre>
         <table class="highlight bordered responsive-table">
           <thead>
@@ -147,25 +147,25 @@
             <td><code>string</code></td>
           </tr>
           <tr>
-            <td>days</td>
+            <td>daysName</td>
             <td><code>d</code></td>
             <td>Как называть дни</td>
             <td><code>string</code></td>
           </tr>
           <tr>
-            <td>hours</td>
+            <td>hoursName</td>
             <td><code>h</code></td>
             <td>Как называть часы</td>
             <td><code>string</code></td>
           </tr>
           <tr>
-            <td>minutes</td>
+            <td>minutesName</td>
             <td><code>m</code></td>
             <td>Как называть минуты</td>
             <td><code>string</code></td>
           </tr>
           <tr>
-            <td>seconds</td>
+            <td>secondsName</td>
             <td><code>s</code></td>
             <td>Как называть секунды</td>
             <td><code>string</code></td>
@@ -240,25 +240,25 @@
 </script>
 <script src="js/prism.js"></script>
 <script src="js/scripts.min.js"></script>
-<script src="js/jquery.timezz-es2015.min.js"></script>
+<script src="js/TimezZ-es6.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script>
-$('#timer').timezz({
-  'date' : 'January 1, 2040 00:00:00',
-  'days' : 'дне',
-  'hours' : 'час',
-  'minutes' : 'мин',
-  'seconds' : 'сек',
-  'tagNumber' : 'b',
-  'tagLetter' : 'span'
+new TimezZ('.j-timer', {
+  date: 'January 1, 2040 00:00:00',
+  daysName: 'day',
+  hoursName: 'hrs',
+  minutesName: 'min',
+  secondsName: 'sec',
+  tagNumber: 'b',
+  tagLetter: 'span'
  });
 </script>
 <script>
   // demo timer
-  $('#demo-timer').timezz({
-    'date' : 'Jan 01, 2020 00:00:00',
-    'tagNumber' : 'b',
-    'tagLetter' : 'span'
+  new TimezZ('#demo-timer', {
+    date: 'Jan 01, 2020 00:00:00',
+    tagNumber: 'b',
+    tagLetter: 'span'
   });
 
   // for «Try your date»
@@ -273,14 +273,14 @@ $('#timer').timezz({
     $('#' + demoId).remove()
 
     if (isNaN(Date.parse(demoDate))) {
-      demoParent.html('Дата не верна')
+      demoParent.html('Date is not correct')
     } else {
       demoParent.html('<div id="' + demoId + '"></div>')
 
-      $('#' + demoId).timezz({
-        'date' : demoDate,
-        'tagNumber' : 'b',
-        'tagLetter' : 'span'
+      new TimezZ('#' + demoId, {
+        date: demoDate,
+        tagNumber: 'b',
+        tagLetter: 'span'
       });
     }
 
