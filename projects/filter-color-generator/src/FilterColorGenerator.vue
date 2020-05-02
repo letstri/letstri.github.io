@@ -64,7 +64,13 @@
         </div>
         <!-- eslint-disable -->
         <pre class="code-example">.<span class="name">block</span> <span class="brack">{</span>
-  <span v-html="filter" />
+  <span
+    v-if="filter"
+    v-html="filter"
+  /><span
+    v-if="!filter"
+    class="grey"
+  >// Choose a color</span>
 <span class="brack">}</span></pre>
         <!-- eslint-enable -->
       </div>
@@ -228,6 +234,10 @@ img {
 
   .brack {
     color: #999;
+  }
+
+  .grey {
+    color: #bbb;
   }
 }
 
