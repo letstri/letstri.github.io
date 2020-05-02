@@ -63,11 +63,8 @@
           </div>
         </div>
         <!-- eslint-disable -->
-        <pre class="code-example">.<span class="name">style</span> <span class="brack">{</span>
+        <pre class="code-example">.<span class="name">block</span> <span class="brack">{</span>
   <span v-html="filter" />
-  <span class="prop">background-color</span>: {{ color.hex }};
-  <span class="prop">background-color</span>: rgb({{ color.rgba.r }}, {{ color.rgba.g }}, {{ color.rgba.b }});
-  <span class="prop">background-color</span>: hsl({{ Math.ceil(color.hsl.h) }}, {{ Math.ceil(color.hsl.s * 100) }}%, {{ Math.ceil(color.hsl.l * 100) }}%);
 <span class="brack">}</span></pre>
         <!-- eslint-enable -->
       </div>
@@ -100,16 +97,16 @@ export default {
 
     loss() {
       if (this.result.loss < 1) {
-        return 'This is a perfect result.';
+        return 'Beautiful match!';
       }
       if (this.result.loss < 5) {
-        return 'The is close enough.';
+        return 'Pretty close.';
       }
       if (this.result.loss < 15) {
-        return 'The color is somewhat off. Consider running it again.';
+        return 'The color is deviated. Try again.';
       }
 
-      return 'The color is extremely off. Run it again!';
+      return 'The color is vary a lot. Try again!';
     },
   },
 
@@ -219,5 +216,9 @@ img {
   .brack {
     color: #999;
   }
+}
+
+.vc-chrome {
+  font-family: sans-serif !important;
 }
 </style>
