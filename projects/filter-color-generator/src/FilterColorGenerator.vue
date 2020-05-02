@@ -12,22 +12,11 @@
             @input="updateFilter"
           />
           <div class="loss">
-            {{ loss }}
+            Filter color may differ from HEX.
           </div>
         </div>
         <div class="results">
-          <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <div class="block">
-                <div
-                  class="square"
-                  :style="result && result.filter"
-                />
-              </div>
-              <div class="colored">
-                Colored with filter.
-              </div>
-            </div>
+          <div class="row align-items-center">
             <div class="col-xs-12 col-sm-4">
               <div class="block">
                 <div
@@ -37,6 +26,17 @@
               </div>
               <div class="colored">
                 Colored with background color.
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="block">
+                <div
+                  class="square"
+                  :style="result && result.filter"
+                />
+              </div>
+              <div class="colored">
+                Colored with filter.
               </div>
             </div>
             <div class="col-xs-12 col-sm-4">
@@ -56,7 +56,7 @@
                   v-if="image"
                   class="colored"
                 >
-                  Colored with filter.
+                  Demo image with filter.
                 </div>
               </div>
             </div>
@@ -92,10 +92,18 @@ export default {
 
   computed: {
     filter() {
+      if (!this.result.filter) {
+        return '';
+      }
+
       return this.result.filter.replace('filter', '<span class="prop">filter</span>');
     },
 
     loss() {
+      if (!this.result.loss) {
+        return 'Choose a color.';
+      }
+
       if (this.result.loss < 1) {
         return 'Beautiful match!';
       }
@@ -106,13 +114,18 @@ export default {
         return 'The color is deviated. Try again.';
       }
 
-      return 'The color is vary a lot. Try again!';
+      return 'The color is differ a lot. Try again!';
     },
   },
 
   watch: {
     color(color) {
       window.localStorage.setItem('selectedColor', JSON.stringify(color));
+    },
+
+    loss(loss) {
+      // eslint-disable-next-line no-console
+      console.log(loss);
     },
   },
 
