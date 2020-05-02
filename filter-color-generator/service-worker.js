@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/filter-color-generator/precache-manifest.dee67ddcebd30f3ccb47872035982243.js"
+  "/filter-color-generator/precache-manifest.c36ed1eb7dd10ede55ace222f5ef0967.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "filter-color-generator"});

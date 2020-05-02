@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/filter-color-generator/css/index.5ff124af.css"
   },
   {
-    "revision": "10cc64a1385e00bedf899980b20eddab",
+    "revision": "26c9ac2f4f964db3243a5b20b8e4730a",
     "url": "/filter-color-generator/index.html"
   },
   {
