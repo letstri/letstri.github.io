@@ -100,7 +100,7 @@ export default {
     },
 
     loss() {
-      if (!this.result.loss) {
+      if (this.result.loss === undefined) {
         return 'Choose a color.';
       }
 
