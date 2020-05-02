@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e18ec20984e868148d98",
-    "url": "/filter-color-generator/css/app.92647ec0.css"
+    "revision": "3884a9b9f24cc7640b1e",
+    "url": "/filter-color-generator/css/app.bc3b928c.css"
   },
   {
-    "revision": "e493b9fd4fdc3d7c98b1",
+    "revision": "38776e1aa9a52f4943fc",
     "url": "/filter-color-generator/css/chunk-vendors.4c86d157.css"
   },
   {
-    "revision": "788376df73e8e57a4155c194b100a121",
+    "revision": "60c96f6c4c6a9cbfd7ecbdaa4eaee632",
     "url": "/filter-color-generator/index.html"
   },
   {
-    "revision": "e18ec20984e868148d98",
-    "url": "/filter-color-generator/js/app.7e3b9a60.js"
+    "revision": "3884a9b9f24cc7640b1e",
+    "url": "/filter-color-generator/js/app.9f5f142c.js"
   },
   {
-    "revision": "e493b9fd4fdc3d7c98b1",
-    "url": "/filter-color-generator/js/chunk-vendors.df4794fa.js"
+    "revision": "38776e1aa9a52f4943fc",
+    "url": "/filter-color-generator/js/chunk-vendors.f8b02381.js"
   },
   {
     "revision": "d9d8f72e155e01f18ee9186635f28a50",
