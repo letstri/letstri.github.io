@@ -3,4 +3,10 @@ module.exports = {
     ? '/filter-color-generator/'
     : '/',
   outputDir: '../../filter-color-generator/',
+  pages: {
+    index: {
+      entry: './src/main.js',
+      title: 'Filter Color Generator',
+    },
+  },
 };

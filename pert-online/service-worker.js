@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pert-online/precache-manifest.87f58e541195949c93e78b60b566f5e9.js"
+  "/pert-online/precache-manifest.67a1120d3a4ec0636e14ae807099d8b8.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pert-online"});
