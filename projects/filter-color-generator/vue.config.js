@@ -3,6 +3,7 @@ module.exports = {
     ? '/filter-color-generator/'
     : '/',
   outputDir: '../../filter-color-generator/',
+  productionSourceMap: false,
   pages: {
     index: {
       entry: './src/main.js',

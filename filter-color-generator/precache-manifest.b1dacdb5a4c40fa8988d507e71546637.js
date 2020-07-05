@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/filter-color-generator/css/chunk-vendors.4c86d157.css"
   },
   {
-    "revision": "6645c1253a5b31380b0e",
+    "revision": "980507d15d132b5834c4",
     "url": "/filter-color-generator/css/index.8e732dfc.css"
   },
   {
-    "revision": "af1230c6f1c4396a4cf741c1862b5c32",
+    "revision": "fe8e831ef07f511c1f65004a28b513a5",
     "url": "/filter-color-generator/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/filter-color-generator/js/chunk-vendors.f8b02381.js"
   },
   {
-    "revision": "6645c1253a5b31380b0e",
-    "url": "/filter-color-generator/js/index.7f7b0afd.js"
+    "revision": "980507d15d132b5834c4",
+    "url": "/filter-color-generator/js/index.646b9d84.js"
   },
   {
     "revision": "d9d8f72e155e01f18ee9186635f28a50",
