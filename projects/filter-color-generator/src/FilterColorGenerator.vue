@@ -125,10 +125,10 @@ export default {
         return 'Pretty close.';
       }
       if (this.result.loss < 15) {
-        return 'The color is deviated. Try again.';
+        return 'The color is deviated.';
       }
 
-      return 'The color is differ a lot. Try again!';
+      return 'The color is differ a lot.';
     },
   },
 
