@@ -138,6 +138,11 @@ export default {
     },
 
     loss(loss) {
+      if (loss > 10) {
+        this.updateFilter();
+        return;
+      }
+
       // eslint-disable-next-line no-console
       console.log(loss);
     },
