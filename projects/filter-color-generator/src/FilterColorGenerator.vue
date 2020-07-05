@@ -113,7 +113,7 @@ export default {
       return this.result.filter.replace('filter', '<span class="prop">filter</span>');
     },
 
-    loss() {
+    difference() {
       if (this.result.loss === undefined) {
         return 'Choose a color.';
       }
@@ -137,14 +137,14 @@ export default {
       window.localStorage.setItem('selectedColor', JSON.stringify(color));
     },
 
-    loss(loss) {
+    'result.loss': function lossWatcher(loss) {
       if (loss > 10) {
         this.updateFilter();
         return;
       }
 
       // eslint-disable-next-line no-console
-      console.log(loss);
+      console.log(this.difference);
     },
   },
 
