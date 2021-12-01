@@ -32,14 +32,19 @@
           Send email
         </el-button>
       </el-row>
-      <el-row v-html="value" />
+      <el-row>
+        <iframe ref="frame" class="email-sender__frame" frameborder="0" src="about:blank" />
+      </el-row>
     </el-form>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import debounce from 'debounce';
 import * as monaco from 'monaco-editor';
+import { setQuery, getQuery } from 'queryzz';
+import { encode, decode } from 'js-base64';
 
 const DEFAULT_VALUE = `<!--
   It's a test mail sender for your templates.
@@ -76,12 +81,14 @@ export default {
   mounted() {
     this.initEditor();
     this.form.email = window.localStorage.getItem('email-sender.email') || '';
-    this.editor.setValue(window.localStorage.getItem('email-sender.template') || DEFAULT_VALUE);
+
+    const { template } = getQuery();
+
+    this.editor.setValue((template && decode(template)) || window.localStorage.getItem('email-sender.template') || DEFAULT_VALUE);
   },
 
   methods: {
     send() {
-      console.log(this.$refs.form);
       this.$refs.form.validate(async (valid) => {
         if (valid) {
           this.isLoading = true;
@@ -97,10 +104,9 @@ export default {
               throw new Error();
             }
 
-            this.$notify({
+            this.$notify.success({
               title: 'Success',
               message: 'The message has been sent successfully.',
-              type: 'success',
             });
           } catch (e) {
             this.$notify.error({
@@ -124,13 +130,22 @@ export default {
         },
       });
 
-      this.editor.onDidChangeModelContent(() => {
-        const value = this.editor.getValue();
-
-        window.localStorage.setItem('email-sender.template', value);
-        this.value = value;
-      });
+      this.editor.onDidChangeModelContent(() => this.setValue());
     },
+
+    setValue: debounce(function debouncedSetValue() {
+      const value = this.editor.getValue();
+
+      window.localStorage.setItem('email-sender.template', value);
+      this.value = value;
+      setQuery({ template: encode(value) });
+
+      const { document } = this.$refs.frame.contentWindow;
+
+      document.open();
+      document.write(value);
+      document.close();
+    }, 100),
   },
 };
 </script>
@@ -163,6 +178,12 @@ body {
   &__editor {
     margin: 50px 0 20px;
     height: 400px;
+  }
+
+  &__frame {
+    margin-top: 40px;
+    width: 100%;
+    height: 70vh;
   }
 }
 </style>
