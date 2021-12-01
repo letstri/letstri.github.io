@@ -32,6 +32,7 @@
           Send email
         </el-button>
       </el-row>
+      <el-row v-html="value" />
     </el-form>
   </div>
 </template>
@@ -56,6 +57,7 @@ export default {
     form: {
       email: '',
     },
+    value: '',
     editor: null,
     rules: {
       email: [
@@ -79,6 +81,7 @@ export default {
 
   methods: {
     send() {
+      console.log(this.$refs.form);
       this.$refs.form.validate(async (valid) => {
         if (valid) {
           this.isLoading = true;
@@ -122,7 +125,10 @@ export default {
       });
 
       this.editor.onDidChangeModelContent(() => {
-        window.localStorage.setItem('email-sender.template', this.editor.getValue());
+        const value = this.editor.getValue();
+
+        window.localStorage.setItem('email-sender.template', value);
+        this.value = value;
       });
     },
   },
